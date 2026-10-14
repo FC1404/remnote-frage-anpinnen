@@ -1,0 +1,22 @@
+{
+  "manifestVersion": 1,
+  "id": "personal_pinned_question",
+  "name": "Frage anpinnen",
+  "unlisted": true,
+  "author": "Personal Plugin",
+  "repoUrl": "https://github.com/FC1404/remnote-frage-anpinnen",
+  "version": {
+    "major": 0,
+    "minor": 1,
+    "patch": 9
+  },
+  "enableOnMobile": false,
+  "description": "Pinne individuelle Fragen an Stichpunkte und zeige sie beim Lernen zusätzlich zur bestehenden Karte an.",
+  "requestNative": false,
+  "requiredScopes": [
+    {
+      "type": "All",
+      "level": "ReadCreateModifyDelete"
+    }
+  ]
+}
