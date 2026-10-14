@@ -8,7 +8,7 @@
   "version": {
     "major": 0,
     "minor": 1,
-    "patch": 10
+    "patch": 11
   },
   "enableOnMobile": false,
   "description": "Pinne individuelle Fragen an Stichpunkte und zeige sie beim Lernen zusätzlich zur bestehenden Karte an.",
