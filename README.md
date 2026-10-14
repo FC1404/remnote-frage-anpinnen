@@ -1,4 +1,4 @@
-# Frage anpinnen · 0.1.10
+# Frage anpinnen · 0.1.11
 
 Version 0.1.5 ersetzt den Pin-Button rechts am Stichpunkt durch das Fragezeichen-Symbol der Lernansicht. Ein Klick öffnet weiterhin die gespeicherte Frage.
 
@@ -56,7 +56,7 @@ Grundlage: offizielles RemNote React-Template (MIT), SDK 0.0.46. Die Menüeintr�
 
 ## Veröffentlichung
 
-Der Quellcode liegt unter https://github.com/FC1404/remnote-frage-anpinnen. Version 0.1.10 lässt die Fragenbox über die gesamte verfügbare Breite der Lernkarte laufen. Das Plugin ist mit `unlisted: true` für die Installation über einen direkten Link vorbereitet. Nach `npm run build` kann `PluginZip.zip` unter RemNote → Plugins → Build → Upload plugin eingereicht werden. Die Freigabe durch RemNote steht noch aus.
+Der Quellcode liegt unter https://github.com/FC1404/remnote-frage-anpinnen. Version 0.1.11 passt die Breite der Fragenbox an die Länge der Frage an und begrenzt sie auf die verfügbare Kartenbreite. Das Plugin ist mit `unlisted: true` für die Installation über einen direkten Link vorbereitet. Nach `npm run build` kann `PluginZip.zip` unter RemNote → Plugins → Build → Upload plugin eingereicht werden. Die Freigabe durch RemNote steht noch aus.
 
 Offizielle Dokumentation:
 - https://plugins.remnote.com/getting-started/quick_start_guide
