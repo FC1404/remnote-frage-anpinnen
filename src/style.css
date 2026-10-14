@@ -43,7 +43,8 @@ footer { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-t
   background: transparent;
 }
 .question-card {
-  width: 100%;
+  width: fit-content;
+  max-width: 100%;
   box-sizing: border-box;
   margin: 0;
   padding: 16px 20px 18px;
