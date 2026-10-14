@@ -1,0 +1,99 @@
+:root { color-scheme: light dark; }
+/* RemNote injects a page background into sandbox widgets. Keep the queue's
+   iframe canvas transparent; the question card retains its own surface. */
+html.pinned-question-queue,
+html.pinned-question-queue body,
+html.pinned-question-queue body > div,
+html.pinned-question-queue .plugin {
+  background: transparent !important;
+}
+html.pinned-question-queue { color-scheme: normal; }
+body, :host { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.5; color: var(--rn-clr-content-primary, #222b36); }
+* { box-sizing: border-box; }
+button, textarea { font: inherit; }
+button { border: 1px solid #d5dae1; border-radius: 8px; padding: 8px 12px; background: #fff; color: #344054; cursor: pointer; }
+button:hover { background: #f0f3f7; }
+button:focus-visible, textarea:focus-visible { outline: 3px solid #8cb5ff; outline-offset: 2px; }
+button:disabled { opacity: .48; cursor: default; }
+.question-editor { padding: 24px; background: var(--rn-clr-background-primary, #fff); }
+.question-editor header { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 22px; }
+.pin-heading { display: grid; place-items: center; width: 38px; height: 38px; flex: 0 0 auto; background: #f2f5ff; border-radius: 10px; font-size: 20px; }
+h1 { font-size: 19px; line-height: 1.35; margin: 0 0 5px; font-weight: 650; }
+header p { font-size: 13px; color: #667085; margin: 0; }
+label { display: block; font-weight: 600; margin-bottom: 8px; }
+textarea { display: block; width: 100%; padding: 11px 12px; border: 1px solid #ccd3de; border-radius: 9px; background: #fff; color: #222b36; resize: vertical; min-height: 105px; max-height: 260px; }
+textarea::placeholder { color: #7b8493; }
+footer { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.spacer { flex: 1; }
+.primary { color: #fff; background: #365ee8; border-color: #365ee8; font-weight: 600; }
+.primary:hover { background: #294ccb; }
+.danger { color: #b42338; border-color: transparent; padding-left: 0; }
+.danger:hover { background: #fff0f0; }
+.error { color: #b42338; font-size: 13px; }
+.status { padding: 12px; margin: 0; }
+.pin-button { display: grid; place-items: center; padding: 0; width: 30px; height: 28px; border: 0; background: transparent; font-size: 17px; border-radius: 6px; }
+/* Padding belongs to the measured widget body, unlike collapsing outer margins. */
+.question-card-space {
+  --question-surface: #f7f8fb;
+  --question-border: #e0e4ed;
+  --question-label: #606b87;
+  --question-text: #253047;
+  padding: 16px 2px 14px;
+  width: 100%;
+  background: transparent;
+}
+.question-card {
+  width: 100%;
+  max-width: 720px;
+  margin: 0;
+  padding: 16px 20px 18px;
+  border: 1px solid var(--question-border);
+  border-radius: 12px;
+  background: var(--question-surface);
+  color: var(--question-text);
+  text-align: left;
+}
+.question-card-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--question-label);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .075em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+.question-card-icon { width: 17px; height: 17px; flex: 0 0 auto; stroke: currentColor; stroke-width: 1.65; stroke-linecap: round; stroke-linejoin: round; }
+.question-card p { margin: 9px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 17px; font-weight: 450; line-height: 1.6; }
+@media (max-width: 420px) {
+  .question-card-space { padding-top: 12px; }
+  .question-card { padding: 13px 15px 15px; }
+  .question-card p { font-size: 16px; }
+}
+@media (prefers-color-scheme: dark) {
+  body, :host { color: var(--rn-clr-content-primary, #e7eaf1); }
+  .question-editor { background: var(--rn-clr-background-primary, #20232a); }
+  header p { color: #a9b1c1; }
+  .pin-heading { background: #2a3042; }
+  body:not(.light) .question-card-space {
+    --question-surface: #2b2e38;
+    --question-border: #404452;
+    --question-label: #aeb9d5;
+    --question-text: #f0f1f6;
+  }
+  textarea, button { background: #292e38; color: #e7eaf1; border-color: #495262; }
+  button:hover { background: #353d4a; }
+  .pin-button { background: transparent; border: 0; }
+  .primary { background: #4268ed; border-color: #4268ed; color: #fff; }
+  .error, .danger { color: #ff9ba7; }
+  .danger:hover { background: #462a32; }
+}
+/* RemNote sends its own theme class to sandbox widgets. Honor it even when
+   the system theme differs from the theme chosen inside RemNote. */
+body.dark .question-card-space, :host-context(.dark) .question-card-space {
+  --question-surface: #2b2e38;
+  --question-border: #404452;
+  --question-label: #aeb9d5;
+  --question-text: #f0f1f6;
+}
